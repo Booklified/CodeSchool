@@ -1,58 +1,86 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
-
+import { connect } from 'react-redux';
 import { SuperBlocks } from '../../../shared/config/curriculum';
 import SEO from '../components/seo';
 import { Loader } from '../components/helpers';
-import LandingTop from '../components/landing/components/landing-top';
-import LandingTopB from '../components/landing/components/landing-top-b';
-import AsSeenIn from '../components/landing/components/as-seen-in';
-import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
-import Faq from '../components/landing/components/faq';
 import '../components/landing/landing.css';
+import Intro from '../components/Intro';
+import {
+  isSignedInSelector,
+  userSelector,
+  userFetchStateSelector
+} from '../redux/selectors';
 
-type Challenge = {
-  id: string;
-  superBlock: SuperBlocks;
-};
+interface FetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+}
+
+interface User {
+  name: string;
+  username: string;
+  completedChallengeCount: number;
+  isDonating: boolean;
+}
+
+const mapStateToProps = createSelector(
+  userFetchStateSelector,
+  isSignedInSelector,
+  userSelector,
+  (fetchState: FetchState, isSignedIn: boolean, user: User) => ({
+    fetchState,
+    isSignedIn,
+    user
+  })
+);
+
+interface FetchState {
+  pending: boolean;
+  complete: boolean;
+  errored: boolean;
+}
+interface User {
+  name: string;
+  username: string;
+  completedChallengeCount: number;
+  isDonating: boolean;
+}
+interface Slug {
+  slug: string;
+}
 
 type Props = {
+  isSignedIn: boolean;
+  fetchState: FetchState;
+  state: Record<string, unknown>;
+  user: User;
   data: {
+    challengeNode: {
+      challenge: {
+        fields: Slug;
+      };
+    };
     allChallengeNode: {
       nodes: {
-        challenge: Challenge;
+        challenge: {
+          id: string;
+          superBlock: SuperBlocks;
+        };
       }[];
     };
   };
 };
 
-type LandingProps = {
-  allChallenges: Challenge[];
-};
-
-const LandingA = ({ allChallenges }: LandingProps) => (
-  <main className='landing-page'>
-    <LandingTop />
-    <AsSeenIn />
-    <Testimonials />
-    <Certifications allChallenges={allChallenges} />
-    <Faq />
-  </main>
-);
-
-const LandingB = ({ allChallenges }: LandingProps) => (
-  <main className='landing-page landing-page-b'>
-    <LandingTopB />
-    <Testimonials />
-    <Certifications allChallenges={allChallenges} />
-    <Faq />
-  </main>
-);
-
 function IndexPage({
+  isSignedIn,
+  fetchState: { pending, complete },
+  user: { name = '', completedChallengeCount = 0, isDonating = false },
   data: {
     allChallengeNode: { nodes: challengeNodes }
   }
@@ -61,18 +89,23 @@ function IndexPage({
   const growthbook = useGrowthBook();
   const allChallenges = challengeNodes.map(node => node.challenge);
   if (growthbook && growthbook.ready) {
-    const showLandingPageRedesign = growthbook.getFeatureValue(
-      'landing-page-redesign',
-      false
-    );
     return (
       <>
         <SEO title={t('metaTags:title')} />
-        {showLandingPageRedesign === true ? (
-          <LandingB allChallenges={allChallenges} />
-        ) : (
-          <LandingA allChallenges={allChallenges} />
-        )}
+
+        <main className='landing-page landing-page-b'>
+          <Intro
+            complete={complete}
+            completedChallengeCount={completedChallengeCount}
+            isSignedIn={isSignedIn}
+            name={name}
+            pending={pending}
+            onLearnDonationAlertClick={() => {}}
+            isDonating={isDonating}
+          />
+
+          <Certifications allChallenges={allChallenges} />
+        </main>
       </>
     );
   } else {
@@ -86,8 +119,7 @@ function IndexPage({
 }
 
 IndexPage.displayName = 'IndexPage';
-
-export default IndexPage;
+export default connect(mapStateToProps)(IndexPage);
 
 export const query = graphql`
   query AllChallengeNode {

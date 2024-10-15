@@ -4,7 +4,6 @@ import { Col } from '@freecodecamp/ui';
 import Map from '../../Map/index';
 import { Spacer } from '../../helpers';
 import { type SuperBlocks } from '../../../../../shared/config/curriculum';
-import BigCallToAction from './big-call-to-action';
 
 const Certifications = ({
   allChallenges
@@ -24,8 +23,6 @@ const Certifications = ({
       xs={12}
     >
       <Map allChallenges={allChallenges} forLanding={true} />
-      <Spacer size='medium' />
-      <BigCallToAction />
       <Spacer size='medium' />
     </Col>
   );

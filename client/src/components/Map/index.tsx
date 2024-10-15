@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
@@ -50,16 +49,6 @@ const linkSpacingStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   gap: '15px'
-};
-
-const superBlockHeadings: { [key in SuperBlockStage]: string } = {
-  [SuperBlockStage.Core]: 'landing.core-certs-heading',
-  [SuperBlockStage.English]: 'landing.learn-english-heading',
-  [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
-  [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
-  [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
-  [SuperBlockStage.New]: '', // TODO: add translation
-  [SuperBlockStage.Upcoming]: 'landing.upcoming-heading'
 };
 
 const mapStateToProps = createSelector(
@@ -133,8 +122,6 @@ function Map({
   completedChallengeIds,
   allChallenges
 }: MapProps): React.ReactElement {
-  const { t } = useTranslation();
-
   const allSuperblockChallengesCompleted = (superblock: SuperBlocks) => {
     // array of all challenge ID's in the superblock
     const allSuperblockChallenges = allChallenges
@@ -162,9 +149,6 @@ function Map({
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({ showNewCurriculum, showUpcomingChanges }).map(stage => (
         <Fragment key={stage}>
-          <h2 className={forLanding ? 'big-heading' : ''}>
-            {t(superBlockHeadings[stage])}
-          </h2>
           <ul key={stage}>
             {superBlockStages[stage].map((superblock, i) => (
               <MapLi
