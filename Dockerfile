@@ -16,7 +16,7 @@ RUN npm install -g typescript
 COPY . .
 
 # Build the application
-RUN pnpm run develop
+RUN pnpm run develop:client
 
 # Expose the port used by the client
 EXPOSE 8000
