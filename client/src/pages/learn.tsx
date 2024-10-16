@@ -1,7 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row } from '@freecodecamp/ui';
@@ -82,8 +81,6 @@ function LearnPage({
     allChallengeNode: { nodes: challengeNodes }
   }
 }: LearnPageProps) {
-  const { t } = useTranslation();
-
   const onLearnDonationAlertClick = () => {
     callGA({
       event: 'donation_related',
@@ -92,7 +89,7 @@ function LearnPage({
   };
   return (
     <LearnLayout>
-      <Helmet title={t('metaTags:title')} />
+      <Helmet title={'Coding Schule - Lerne Programmieren'} />
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>

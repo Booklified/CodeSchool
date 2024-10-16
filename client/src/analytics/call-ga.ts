@@ -3,7 +3,6 @@ import {
   DonationDuration
 } from '../../../shared/config/donation-settings';
 import { ChallengeFiles } from '../redux/prop-types';
-import TagManager from '.';
 
 type DonationEventAction =
   | 'Donate Page PayPal Payment Submission'
@@ -95,7 +94,5 @@ export type GAevent =
   | SignIn;
 
 export default function callGA(payload: GAevent) {
-  TagManager.dataLayer({
-    dataLayer: payload
-  });
+  console.log(payload);
 }

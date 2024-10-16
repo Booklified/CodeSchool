@@ -233,7 +233,7 @@ assert.strictEqual(outputEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCas
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+      href="https://onestop.software/favicon.ico"
     />
     <title>Roman Numeral Converter</title>
   </head>

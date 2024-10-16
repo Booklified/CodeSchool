@@ -94,10 +94,11 @@ const CertChallenge = ({
   }, [currentCerts]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
+  const activateThis = false;
 
   return (
     <div>
-      {isSignedIn && (
+      {isSignedIn && activateThis && (
         <Button
           block={true}
           variant='primary'

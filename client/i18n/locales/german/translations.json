@@ -1,8 +1,8 @@
 {
   "buttons": {
-    "logged-in-cta-btn": "Los geht's! (Es ist 100% kostenlos.)",
+    "logged-in-cta-btn": "Los geht's!",
     "get-started": "Get Started",
-    "logged-out-cta-btn": "Melde dich an, um deinen Fortschritt zu speichern. (Es ist kostenlos.)",
+    "logged-out-cta-btn": "Melde dich an, um deinen Fortschritt zu speichern.",
     "view-curriculum": "Curriculum anzeigen",
     "first-lesson": "Gehe zur ersten Lektion",
     "close": "Schließen",
@@ -56,9 +56,9 @@
     "revert-to-saved-code": "Revert to Saved Code",
     "run": "Ausführen",
     "run-test": "Führe die Tests aus (Strg + Enter)",
-    "check-code": "Check Your Code",
-    "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
-    "check-code-cmd": "Check Your Code (Command + Enter)",
+    "check-code": "Code Prüfen",
+    "check-code-ctrl": "Code Prüfen (Ctrl + Enter)",
+    "check-code-cmd": "Code Prüfen (Command + Enter)",
     "reset": "Zurücksetzen",
     "reset-step": "Reset This Step",
     "help": "Hilfe",
@@ -106,7 +106,7 @@
     "closed-caption": "Closed caption"
   },
   "landing": {
-    "big-heading-1": "Lerne zu programmieren — kostenlos.",
+    "big-heading-1": "Lerne zu programmieren.",
     "big-heading-1-b": "Learn to code.",
     "big-heading-2": "Projekte entwickeln.",
     "big-heading-3": "Zertifizierungen erwerben.",
@@ -122,7 +122,7 @@
       "shawn": {
         "location": "<strong>Shawn Wang</strong> in Singapur",
         "occupation": "Softwareentwickler bei <strong>Amazon</strong>",
-        "testimony": "\"Es ist beängstigend, den Beruf zu wechseln. Ich habe erst durch die hunderte Stunden an kostenlosen Lektionen auf freeCodeCamp das Vertrauen gewonnen, dass ich coden kann. Innerhalb eines Jahres hatte ich einen Job mit sechsstelligen Gehalt als Software Entwickler. <strong>freeCodeCamp hat mein Leben verändert.</strong>\""
+        "testimony": "\"Es ist beängstigend, den Beruf zu wechseln. Ich habe erst durch die hunderte Stunden an Lektionen auf freeCodeCamp das Vertrauen gewonnen, dass ich coden kann. Innerhalb eines Jahres hatte ich einen Job mit sechsstelligen Gehalt als Software Entwickler. <strong>freeCodeCamp hat mein Leben verändert.</strong>\""
       },
       "sarah": {
         "location": "<strong>Sarah Chima</strong> in Nigeria",
@@ -135,7 +135,7 @@
         "testimony": "\"Ich habe immer damit gekämpft, JavaScript zu lernen. Ich habe viele Kurse belegt, aber der Kurs von freeCodeCamp war derjenige, der am meisten hängen blieb. Das Lernen von JavaScript sowie Datenstrukturen und Algorithmen auf <strong>freeCodeCamp gab mir die Fähigkeiten</strong> und das Selbstvertrauen, das ich brauchte, um meinen Traumjob als Softwareentwicklerin bei Spotify zu bekommen.\""
       }
     },
-    "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
+    "certification-heading": "Erlange verifizierte Zertifizierungen in:",
     "core-certs-heading": "Earn free verified certifications with freeCodeCamp's core curriculum:",
     "learn-english-heading": "Learn English for Developers:",
     "professional-certs-heading": "Earn free professional certifications:",
@@ -556,7 +556,7 @@
     "error-card-update": "Something went wrong with updating your card.",
     "error-2": "Irgendetwas ist nicht in Ordnung. Bitte kontaktiere donors@freecodecamp.org",
     "error-3": "Please try again or contact donors@freecodecamp.org",
-    "free-tech": "Deine Spenden unterstützen die kostenlose Technologieausbildung für Menschen auf der ganzen Welt.",
+    "free-tech": "Deine Spenden unterstützen die Technologieausbildung für Menschen auf der ganzen Welt.",
     "visit-supporters": "Visit supporters page to learn about your supporter benefits.",
     "gift-frequency": "Wähle die Schenkungsfrequenz:",
     "gift-amount": "Schenkungsbetrag auswählen:",

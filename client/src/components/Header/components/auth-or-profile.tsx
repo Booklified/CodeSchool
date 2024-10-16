@@ -20,7 +20,7 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
     );
   } else {
     return (
-      <Link className='avatar-nav-link' to={`/${user.username}`}>
+      <Link className='avatar-nav-link' to={`/learn`}>
         <AvatarRenderer
           isDonating={isUserDonating}
           isTopContributor={isTopContributor}

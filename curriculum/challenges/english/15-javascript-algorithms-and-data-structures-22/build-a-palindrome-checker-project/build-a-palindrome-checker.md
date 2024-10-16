@@ -334,7 +334,7 @@ assert.strictEqual(resultEl.innerText.trim().replace(/[.,?!]+$/g, '').toLowerCas
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+      href="https://onestop.software/favicon.ico"
     />
     <title>Palindrome Checker</title>
     <link rel="stylesheet" href="styles.css" />

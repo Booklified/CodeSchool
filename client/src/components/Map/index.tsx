@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
-  type SuperBlocks,
   SuperBlockStage,
+  SuperBlocks,
   getStageOrder,
   superBlockStages
 } from '../../../../shared/config/curriculum';
@@ -79,6 +79,30 @@ function MapLi({
   showNumbers?: boolean;
   index: number;
 }) {
+  if (superBlock === SuperBlocks.A2English) return <></>;
+  if (superBlock === SuperBlocks.B1English) return <></>;
+  if (superBlock === SuperBlocks.CodingInterviewPrep) return <></>;
+  if (superBlock === SuperBlocks.DataAnalysisPy) return <></>;
+  if (superBlock === SuperBlocks.DataVis) return <></>;
+  if (superBlock === SuperBlocks.FoundationalCSharp) return <></>;
+  // if(superBlock === SuperBlocks.RespWebDesignNew) return <></>
+  if (superBlock === SuperBlocks.RespWebDesign) return <></>;
+  if (superBlock === SuperBlocks.JsAlgoDataStruct) return <></>;
+  // if(superBlock === SuperBlocks.JsAlgoDataStructNew) return <></>
+  // if(superBlock === SuperBlocks.FrontEndDevLibs) return <></>
+  // if(superBlock === SuperBlocks.RelationalDb) return <></>
+  // if(superBlock === SuperBlocks.BackEndDevApis) return <></>
+  if (superBlock === SuperBlocks.QualityAssurance) return <></>;
+  if (superBlock === SuperBlocks.SciCompPy) return <></>;
+  if (superBlock === SuperBlocks.InfoSec) return <></>;
+  if (superBlock === SuperBlocks.MachineLearningPy) return <></>;
+  if (superBlock === SuperBlocks.TheOdinProject) return <></>;
+  if (superBlock === SuperBlocks.ProjectEuler) return <></>;
+  if (superBlock === SuperBlocks.CollegeAlgebraPy) return <></>;
+  // if(superBlock === SuperBlocks.FrontEndDevelopment) return <></>
+  if (superBlock === SuperBlocks.UpcomingPython) return <></>;
+  if (superBlock === SuperBlocks.RosettaCode) return <></>;
+  if (superBlock === SuperBlocks.PythonForEverybody) return <></>;
   return (
     <>
       <li

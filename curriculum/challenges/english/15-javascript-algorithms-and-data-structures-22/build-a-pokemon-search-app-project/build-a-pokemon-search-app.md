@@ -446,7 +446,7 @@ async () => {
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+      href="https://onestop.software/favicon.ico"
     />
     <title>Pokémon Search App</title>
     <link rel="stylesheet" href="styles.css" />

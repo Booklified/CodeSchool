@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { createSelector } from 'reselect';
-import { useTranslation } from 'react-i18next';
 import { useGrowthBook } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { SuperBlocks } from '../../../shared/config/curriculum';
-import SEO from '../components/seo';
 import { Loader } from '../components/helpers';
 import Certifications from '../components/landing/components/certifications';
 import '../components/landing/landing.css';
@@ -85,14 +83,11 @@ function IndexPage({
     allChallengeNode: { nodes: challengeNodes }
   }
 }: Props): JSX.Element {
-  const { t } = useTranslation();
   const growthbook = useGrowthBook();
   const allChallenges = challengeNodes.map(node => node.challenge);
   if (growthbook && growthbook.ready) {
     return (
       <>
-        <SEO title={t('metaTags:title')} />
-
         <main className='landing-page landing-page-b'>
           <Intro
             complete={complete}
@@ -111,7 +106,6 @@ function IndexPage({
   } else {
     return (
       <>
-        <SEO title={t('metaTags:title')} />
         <Loader fullScreen={true} />
       </>
     );

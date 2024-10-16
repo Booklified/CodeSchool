@@ -1003,7 +1003,7 @@
       "machine-learning-with-python-projects": {
         "title": "Projekte Maschinelles Lernen mit Python",
         "intro": [
-          "Maschinelles Lernen hat viele praktische Anwendungen. Indem du diese kostenlosen und herausfordernden Coding-Projekte absolvierst, zeigst du, dass du ein gutes Grundwissen über maschinelles Lernen hast und qualifizierst dich für deine Zertifizierung \"Machine Learning with Python\"."
+          "Maschinelles Lernen hat viele praktische Anwendungen. Indem du diese herausfordernden Coding-Projekte absolvierst, zeigst du, dass du ein gutes Grundwissen über maschinelles Lernen hast und qualifizierst dich für deine Zertifizierung \"Machine Learning with Python\"."
         ]
       }
     }
@@ -1161,7 +1161,7 @@
   "coding-interview-prep": {
     "title": "Vorbereitung auf Bewerbungsgespräche",
     "intro": [
-      "Wenn du nach kostenlosen Coding-Übungen suchst, um dich auf dein nächstes Vorstellungsgespräch vorzubereiten, haben wir das Richtige für dich.",
+      "Wenn du nach Coding-Übungen suchst, um dich auf dein nächstes Vorstellungsgespräch vorzubereiten, haben wir das Richtige für dich.",
       "Dieser Bereich enthält hunderte von Coding Challenges, die dein Wissen über Algorithmen, Datenstrukturen und Mathematik testen. Es gibt auch eine Reihe von Projekten, die du mit nach Hause nehmen kannst, um deine Fähigkeiten zu stärken oder dein Portfolio zu erweitern."
     ],
     "note": "The Project Euler Project and Rosetta Code have been moved to their own courses. Go back to the curriculum to see the list of courses we offer.",
@@ -1169,14 +1169,14 @@
       "algorithms": {
         "title": "Algorithmen",
         "intro": [
-          "In diesen kostenlosen Programmierübungen lernst du einige gängige Algorithmen kennen, die dir wahrscheinlich im echten Leben begegnen werden. Sie sind eine großartige Möglichkeit, deine Logik- und Programmierfähigkeiten zu verbessern.",
+          "In diesen Programmierübungen lernst du einige gängige Algorithmen kennen, die dir wahrscheinlich im echten Leben begegnen werden. Sie sind eine großartige Möglichkeit, deine Logik- und Programmierfähigkeiten zu verbessern.",
           "Diese Algorithmen werden häufig in Vorstellungsgesprächen verwendet, um die Fähigkeiten eines Bewerbers zu testen. Wir geben dir klare und prägnante Erklärungen, wie diese verschiedenen Algorithmen funktionieren, damit du eine Lösung für jeden einzelnen implementieren kannst."
         ]
       },
       "data-structures": {
         "title": "Datenstrukturen",
         "intro": [
-          "Diese kostenlosen Programmierkurse sollen dir helfen, mit großen und komplexen Datenstrukturen umzugehen, mit denen du vielleicht noch nicht vertraut bist.",
+          "Diese Programmierkurse sollen dir helfen, mit großen und komplexen Datenstrukturen umzugehen, mit denen du vielleicht noch nicht vertraut bist.",
           "In den folgenden Kursen lernst du jede Art von Datenstruktur kennen und implementierst Algorithmen, um dein Verständnis für sie zu vertiefen."
         ]
       },
@@ -3512,7 +3512,7 @@
   },
   "misc-text": {
     "certification": "{{cert}} Zertifikat",
-    "browse-other": "Stöbere in unseren anderen kostenlosen Zertifizierungen\n(Wir empfehlen, diese der Reihe nach zu erledigen)",
+    "browse-other": "Stöbere in unseren anderen Zertifizierungen\n(Wir empfehlen, diese der Reihe nach zu erledigen)",
     "courses": "Kurse",
     "steps": "Schritte",
     "expand": "Kurs erweitern",

@@ -538,7 +538,7 @@ assert.strictEqual(resultsDiv.innerText.trim().toLowerCase(), 'invalid us number
     <link
       rel="icon"
       type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon.ico"
+      href="https://onestop.software/favicon.ico"
     />
     <title>Telephone Number Validator</title>
     <link rel="stylesheet" href="styles.css" />
