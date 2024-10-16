@@ -12,7 +12,7 @@ RUN npm install -g pnpm && pnpm install
 COPY . .
 
 # Build the application
-RUN pnpm run build:curriculum
+RUN pnpm run build
 
 # Expose port 3000
 EXPOSE 3000
