@@ -4,20 +4,24 @@ FROM node:20
 # Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
+# Copy package.json and pnpm-lock.yaml to install dependencies
 COPY package.json pnpm-lock.yaml ./
 
-RUN npm install -g pnpm
-RUN pnpm install
+# Install pnpm globally and install dependencies
+RUN npm install -g pnpm && pnpm install
 
-# Copy all files
+RUN npm install -g typescript
+
+# Copy all project files
 COPY . .
 
-# Build the client
+# Build the application
 RUN pnpm run develop
 
-# Expose port 8000
+# Expose the port used by the client
 EXPOSE 8000
 
-# Start the client
+# Start the application in development mode
 CMD ["pnpm", "run", "develop"]
+
+
