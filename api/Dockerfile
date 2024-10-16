@@ -5,7 +5,7 @@ FROM node:18
 WORKDIR /app
 
 # Copy package.json and install dependencies
-COPY package.json pnpm-lock.yaml ./
+COPY package.json ./
 RUN npm install -g pnpm && pnpm install
 
 # Copy all files
