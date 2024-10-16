@@ -14,6 +14,7 @@ RUN npm install -g typescript
 
 # Copy all project files
 COPY . .
+COPY .env .env
 
 # Build the application
 RUN pnpm run develop:client
