@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Col } from '@freecodecamp/ui';
 
 import Map from '../../Map/index';
@@ -13,6 +13,9 @@ const Certifications = ({
     superBlock: SuperBlocks;
   }[];
 }): JSX.Element => {
+  useEffect(() => {
+    console.log(allChallenges);
+  }, [allChallenges]);
   return (
     <Col
       className='certification-section'
