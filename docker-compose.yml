@@ -37,7 +37,6 @@ services:
     command: >
       bash -c "
       pnpm install &&
-      pnpm run build:curriculum &&
       pnpm run seed &&
       pnpm run develop"
     restart: unless-stopped
@@ -50,7 +49,7 @@ services:
     environment:
       API_LOCATION: http://localhost:3000
       HOME_LOCATION: http://localhost:8000
-    command: pnpm run develop:client -- -H '0.0.0.0'
+    command: pnpm run develop -- -H '0.0.0.0'
     depends_on:
       - api
     restart: unless-stopped
