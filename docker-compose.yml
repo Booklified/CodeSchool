@@ -1,39 +1,59 @@
+version: '3.8'
+
 services:
   mongo:
     image: mongo
     ports:
       - '27017:27017'
     command: mongod --replSet rs0
-  setup:
-    image: mongo
-    depends_on:
-      - mongo
-    restart: on-failure
-    entrypoint: [
-        'bash',
-        '-c',
-        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
-        'mongosh --host mongo:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
-      ]
-  mailhog:
+    volumes:
+      - mongo_data:/data/db
     restart: unless-stopped
+
+  mailhog:
     image: mailhog/mailhog
     ports:
       - '1025:1025'
       - '8025:8025'
-  api:
     restart: unless-stopped
+
+  api:
+    build: .
+    image: fcc-api
     depends_on:
       - mongo
       - mailhog
-    image: fcc-api
-    env_file:
-      - .env
-    environment:
-      # The api cannot connect to mongodb or mailhog via localhost from inside the
-      # container, so we have to override these variables.
-      - MONGOHQ_URL=mongodb://mongo:27017/freecodecamp?directConnection=true
-      - MAILHOG_HOST=mailhog
-      - HOST=0.0.0.0
     ports:
       - '3000:3000'
+    environment:
+      COOKIE_DOMAIN: yourdomain.com
+      HOME_LOCATION: http://localhost:8000
+      API_LOCATION: http://localhost:3000
+      CHALLENGE_EDITOR_API_LOCATION: http://localhost:3200
+      CHALLENGE_EDITOR_CLIENT_LOCATION: http://localhost:3300
+      MONGOHQ_URL: mongodb://mongo:27017/freecodecamp?directConnection=true
+      MAILHOG_HOST: mailhog
+      HOST: 0.0.0.0
+    command: >
+      bash -c "
+      pnpm install &&
+      pnpm run build:curriculum &&
+      pnpm run seed &&
+      pnpm run develop"
+    restart: unless-stopped
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - '8000:8000'
+    environment:
+      API_LOCATION: http://localhost:3000
+      HOME_LOCATION: http://localhost:8000
+    command: pnpm run develop -- -H '0.0.0.0'
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
