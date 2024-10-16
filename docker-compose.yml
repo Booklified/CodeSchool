@@ -43,7 +43,7 @@ services:
 
   client:
     build:
-      context: ./client # Point to the local directory with the client source code
+      context: ./
     ports:
       - '8000:8000'
     environment:
