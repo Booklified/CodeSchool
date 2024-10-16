@@ -8,6 +8,9 @@ WORKDIR /app
 COPY package.json ./
 RUN npm install -g pnpm && pnpm install
 
+# Install TypeScript globally
+RUN npm install -g typescript
+
 # Copy all files
 COPY . .
 
